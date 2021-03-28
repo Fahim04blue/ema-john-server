@@ -20,12 +20,8 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 client.connect((err) => {
-  const productsCollection = client
-    .db(`${process.env.DB_NAME}`)
-    .collection("products");
-  const ordersCollection = client
-    .db(`${process.env.DB_NAME}`)
-    .collection("orders");
+  const productsCollection = client.db("emajohnDB").collection("products");
+  const ordersCollection = client.db("emajohnDB").collection("orders");
   // perform actions on the collection object
   console.log("DB connected");
 
